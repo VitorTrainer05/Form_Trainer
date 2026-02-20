@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 224 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 20% 10%;
+
+    --primary: 238 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 252 100% 70%;
+
+    --secondary: 224 15% 96%;
+    --secondary-foreground: 224 20% 20%;
+
+    --muted: 224 15% 96%;
+    --muted-foreground: 224 10% 52%;
+
+    --accent: 238 84% 97%;
+    --accent-foreground: 238 84% 40%;
+
+    --destructive: 4 86% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 224 15% 91%;
+    --input: 224 15% 91%;
+    --ring: 238 84% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 224 20% 20%;
+    --sidebar-primary: 238 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 238 84% 97%;
+    --sidebar-accent-foreground: 238 84% 40%;
+    --sidebar-border: 224 15% 91%;
+    --sidebar-ring: 238 84% 60%;
+
+    /* Gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(238 84% 60%), hsl(252 100% 68%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(224 15% 97%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(238 84% 99%));
+
+    /* Shadow tokens */
+    --shadow-sm: 0 1px 3px 0 hsl(224 20% 10% / 0.08), 0 1px 2px -1px hsl(224 20% 10% / 0.05);
+    --shadow-md: 0 4px 16px -2px hsl(224 20% 10% / 0.10), 0 2px 8px -2px hsl(224 20% 10% / 0.06);
+    --shadow-lg: 0 10px 40px -8px hsl(238 84% 60% / 0.18), 0 4px 16px -4px hsl(224 20% 10% / 0.08);
+    --shadow-primary: 0 4px 24px -4px hsl(238 84% 60% / 0.40);
+  }
+
+  .dark {
+    --background: 224 22% 7%;
+    --foreground: 210 30% 96%;
+
+    --card: 224 20% 10%;
+    --card-foreground: 210 30% 96%;
+
+    --popover: 224 20% 10%;
+    --popover-foreground: 210 30% 96%;
+
+    --primary: 238 84% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 252 100% 75%;
+
+    --secondary: 224 15% 15%;
+    --secondary-foreground: 210 30% 85%;
+
+    --muted: 224 15% 14%;
+    --muted-foreground: 224 10% 55%;
+
+    --accent: 238 50% 18%;
+    --accent-foreground: 238 84% 75%;
+
+    --destructive: 4 76% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 15% 18%;
+    --input: 224 15% 18%;
+    --ring: 238 84% 65%;
+
+    --sidebar-background: 224 22% 9%;
+    --sidebar-foreground: 210 30% 85%;
+    --sidebar-primary: 238 84% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 238 50% 18%;
+    --sidebar-accent-foreground: 238 84% 75%;
+    --sidebar-border: 224 15% 18%;
+    --sidebar-ring: 238 84% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(238 84% 65%), hsl(252 100% 72%));
+    --gradient-subtle: linear-gradient(180deg, hsl(224 22% 7%), hsl(224 22% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(224 20% 10%), hsl(238 30% 13%));
+
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.30);
+    --shadow-md: 0 4px 16px -2px hsl(0 0% 0% / 0.40);
+    --shadow-lg: 0 10px 40px -8px hsl(238 84% 60% / 0.25);
+    --shadow-primary: 0 4px 24px -4px hsl(238 84% 60% / 0.50);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-dramatic {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-primary-glow {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsl(var(--card) / 0.85);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
